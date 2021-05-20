@@ -43,23 +43,23 @@ var Planetas = /** @class */ (function (_super) {
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
-    ], Planetas.prototype, "BirthYear");
-    __decorate([
-        typeorm_1.Column(),
-        __metadata("design:type", String)
-    ], Planetas.prototype, "Gender");
+    ], Planetas.prototype, "Climate");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", Number)
-    ], Planetas.prototype, "Height");
+    ], Planetas.prototype, "Population");
     __decorate([
         typeorm_1.Column(),
-        __metadata("design:type", String)
-    ], Planetas.prototype, "SkinColor");
+        __metadata("design:type", Number)
+    ], Planetas.prototype, "OrbitalPeriod");
     __decorate([
         typeorm_1.Column(),
-        __metadata("design:type", String)
-    ], Planetas.prototype, "EyeColor");
+        __metadata("design:type", Number)
+    ], Planetas.prototype, "RotationPeriod");
+    __decorate([
+        typeorm_1.Column(),
+        __metadata("design:type", Number)
+    ], Planetas.prototype, "Diameter");
     __decorate([
         typeorm_1.ManyToOne(function () { return Favoritos_1.Favoritos; }, function (favoritos) { return favoritos.personajes; }),
         __metadata("design:type", Favoritos_1.Favoritos)

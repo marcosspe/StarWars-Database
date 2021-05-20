@@ -10,19 +10,19 @@ export class Planetas extends BaseEntity{
     Name: string
 
     @Column()
-    BirthYear: string
+    Climate: string
 
     @Column()
-    Gender: string
+    Population: number
 
     @Column()
-    Height: number
+    OrbitalPeriod: number
 
     @Column()
-    SkinColor: string
+    RotationPeriod: number
 
     @Column()
-    EyeColor: string
+    Diameter: number
 
     @ManyToOne(() => Favoritos, favoritos => favoritos.personajes)
     favoritos: Favoritos;
