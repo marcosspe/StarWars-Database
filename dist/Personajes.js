@@ -26,6 +26,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 exports.__esModule = true;
 exports.Personajes = void 0;
 var typeorm_1 = require("typeorm");
+var Favoritos_1 = require("./Favoritos");
 var Personajes = /** @class */ (function (_super) {
     __extends(Personajes, _super);
     function Personajes() {
@@ -59,6 +60,10 @@ var Personajes = /** @class */ (function (_super) {
         typeorm_1.Column(),
         __metadata("design:type", String)
     ], Personajes.prototype, "EyeColor");
+    __decorate([
+        typeorm_1.ManyToOne(function () { return Favoritos_1.Favoritos; }, function (favoritos) { return favoritos.personajes; }),
+        __metadata("design:type", Favoritos_1.Favoritos)
+    ], Personajes.prototype, "favoritos");
     Personajes = __decorate([
         typeorm_1.Entity()
     ], Personajes);

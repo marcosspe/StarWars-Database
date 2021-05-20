@@ -24,6 +24,6 @@ export class Personajes extends BaseEntity{
     @Column()
     EyeColor: string
 
-    //@ManyToOne(() => Favoritos, favoritos => favoritos.personajes)
-    //favoritos: Favoritos;
+    @ManyToOne(() => Favoritos, favoritos => favoritos.personajes)
+    favoritos: Favoritos;
 }

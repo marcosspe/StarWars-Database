@@ -27,6 +27,8 @@ exports.__esModule = true;
 exports.Favoritos = void 0;
 var typeorm_1 = require("typeorm");
 var User_1 = require("./User");
+var Personajes_1 = require("./Personajes");
+var Planetas_1 = require("./Planetas");
 var Favoritos = /** @class */ (function (_super) {
     __extends(Favoritos, _super);
     function Favoritos() {
@@ -39,17 +41,25 @@ var Favoritos = /** @class */ (function (_super) {
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", Number)
-    ], Favoritos.prototype, "personajesID");
+    ], Favoritos.prototype, "personajesid");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", Number)
-    ], Favoritos.prototype, "planetasID");
+    ], Favoritos.prototype, "planetasid");
     __decorate([
         typeorm_1.OneToOne(function () { return User_1.User; }, function (user) { return user.favoritos; }) // specify inverse side as a second parameter
         ,
         typeorm_1.JoinColumn(),
         __metadata("design:type", User_1.User)
     ], Favoritos.prototype, "user");
+    __decorate([
+        typeorm_1.OneToMany(function () { return Personajes_1.Personajes; }, function (personajes) { return personajes.favoritos; }),
+        __metadata("design:type", Array)
+    ], Favoritos.prototype, "personajes");
+    __decorate([
+        typeorm_1.OneToMany(function () { return Planetas_1.Planetas; }, function (planetas) { return planetas.favoritos; }),
+        __metadata("design:type", Array)
+    ], Favoritos.prototype, "planetas");
     Favoritos = __decorate([
         typeorm_1.Entity()
     ], Favoritos);
