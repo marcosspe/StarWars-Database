@@ -24,49 +24,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 exports.__esModule = true;
-exports.Planetas = void 0;
+exports.People = void 0;
 var typeorm_1 = require("typeorm");
-var Favoritos_1 = require("./Favoritos");
-var Planetas = /** @class */ (function (_super) {
-    __extends(Planetas, _super);
-    function Planetas() {
+var Fav_people_1 = require("./Fav_people");
+var People = /** @class */ (function (_super) {
+    __extends(People, _super);
+    function People() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     __decorate([
         typeorm_1.PrimaryGeneratedColumn(),
         __metadata("design:type", Number)
-    ], Planetas.prototype, "id");
+    ], People.prototype, "id");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
-    ], Planetas.prototype, "Name");
+    ], People.prototype, "Name");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
-    ], Planetas.prototype, "Climate");
+    ], People.prototype, "BirthYear");
+    __decorate([
+        typeorm_1.Column(),
+        __metadata("design:type", String)
+    ], People.prototype, "Gender");
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", Number)
-    ], Planetas.prototype, "Population");
+    ], People.prototype, "Height");
     __decorate([
         typeorm_1.Column(),
-        __metadata("design:type", Number)
-    ], Planetas.prototype, "OrbitalPeriod");
+        __metadata("design:type", String)
+    ], People.prototype, "SkinColor");
     __decorate([
         typeorm_1.Column(),
-        __metadata("design:type", Number)
-    ], Planetas.prototype, "RotationPeriod");
+        __metadata("design:type", String)
+    ], People.prototype, "EyeColor");
     __decorate([
-        typeorm_1.Column(),
-        __metadata("design:type", Number)
-    ], Planetas.prototype, "Diameter");
-    __decorate([
-        typeorm_1.ManyToOne(function () { return Favoritos_1.Favoritos; }, function (favoritos) { return favoritos.personajes; }),
-        __metadata("design:type", Favoritos_1.Favoritos)
-    ], Planetas.prototype, "favoritos");
-    Planetas = __decorate([
+        typeorm_1.OneToMany(function () { return Fav_people_1.Fav_people; }, function (fav_people) { return fav_people.people; }),
+        __metadata("design:type", Array)
+    ], People.prototype, "fav_people");
+    People = __decorate([
         typeorm_1.Entity()
-    ], Planetas);
-    return Planetas;
+    ], People);
+    return People;
 }(typeorm_1.BaseEntity));
-exports.Planetas = Planetas;
+exports.People = People;
